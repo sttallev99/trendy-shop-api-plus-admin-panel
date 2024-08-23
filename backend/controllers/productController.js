@@ -34,4 +34,17 @@ const listProduct = async(req, res) => {
     }
 }
 
-export { addProduct, listProduct }
+//remove product item
+const removeProduct = async(req, res) => {
+    try{
+        const product = await productModel.findById(req.body.id);
+        fs.unlink(`uploads/${product.image}`, () => {})
+        await productModel.findByIdAndDelete(req.body.id);
+        res.json({success: true, message: "Product removed"})
+    } catch(err) {
+        console.log(err)
+        res.json({success: false, message: "Error"});
+    }
+}
+
+export { addProduct, listProduct, removeProduct }
