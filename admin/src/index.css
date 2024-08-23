@@ -57,7 +57,7 @@ html{
     @apply text-secondary relative flex-1 after:w-full after:h-[1px] after:bg-secondary after:absolute after:-bottom-3 after:right-0;
   } */
   .active-link{
-    @apply relative flex-1 after:w-1.5 after:h-1.5 after:rounded-full after:bg-secondary after:absolute after:-top-0 after:-right-1;
+    @apply flexCenter gap-x-2 cursor-pointer max-w-60 h-10 border border-slate-900/15 !bg-primary;
   }
   .active-ctg{
     @apply border-8 border-solid border-black p-1 ;
