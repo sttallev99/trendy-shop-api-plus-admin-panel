@@ -23,4 +23,15 @@ const addProduct = async (req, res) => {
 }
 
 
-export { addProduct }
+//all products list
+const listProduct = async(req, res) => {
+    try{
+        const products = await productModel.find({})
+        res.json({success: true, data: products})
+    } catch(err) {
+        console.log(err)
+        res.json({success: false, message: "Error"})
+    }
+}
+
+export { addProduct, listProduct }
