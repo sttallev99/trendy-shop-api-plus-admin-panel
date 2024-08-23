@@ -2,6 +2,7 @@ import upload_area from "../assets/upload_area1.svg"
 import {FaPlus} from "react-icons/fa"
 import { useState } from 'react'
 import axios from "axios"
+import { toast } from "react-toastify"
 
 export const Add = () => {
     const url = 'http://localhost:4000';
@@ -37,8 +38,9 @@ export const Add = () => {
                 category: "Men"
             });
             setImage(false)
+            toast.success(response.data.message);
         } else {
-
+            toast.error(response.data.message)
         }
         
     }

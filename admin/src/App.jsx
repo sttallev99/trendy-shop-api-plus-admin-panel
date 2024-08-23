@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Navbar } from "./components/Navbar"
 import { Sidebar } from './components/Sidebar'
 import { List } from './pages/List'
@@ -9,6 +11,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <ToastContainer />
       <Navbar />
       <hr />
       <div className='flex max-padd-container'>
