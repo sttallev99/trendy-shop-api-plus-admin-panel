@@ -8,7 +8,8 @@ import { Orders } from './pages/Orders'
 import { Add } from './pages/Add'
 
 function App() {
-
+  const url = "http://localhost:4000";
+  
   return (
     <BrowserRouter>
     <ToastContainer />
@@ -17,8 +18,8 @@ function App() {
       <div className='flex max-padd-container'>
         <Sidebar />
         <Routes>
-          <Route path='/add' element={<Add />}/>
-          <Route path='/list' element={<List/>}/>
+          <Route path='/add' element={<Add  url={url}/>}/>
+          <Route path='/list' element={<List url={url}/>}/>
           <Route path='/orders' element={<Orders/>}/>
         </Routes>
       </div>
