@@ -90,7 +90,7 @@ export const Add = ({url}) => {
                         required
                     >
                         <option value="Men">Men</option>
-                        <option value="Woman">Woman</option>
+                        <option value="Women">Woman</option>
                         <option value="Kids">Kids</option>
                         <option value="Electronics">Electronics</option>
                         <option value="Cosmetics">Cosmetics</option>
