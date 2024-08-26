@@ -8,7 +8,7 @@ import { Orders } from './pages/Orders'
 import { Add } from './pages/Add'
 
 function App() {
-  const url = "http://localhost:4000";
+  const url = "https://trendy-shop-api.onrender.com";
   
   return (
     <BrowserRouter>
