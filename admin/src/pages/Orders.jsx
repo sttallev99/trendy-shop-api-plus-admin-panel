@@ -18,6 +18,13 @@ export const Orders = ({url}) => {
     }
   }
 
+  const statusHander = async(e, orderId) => {
+    const response = await axios.post(url+"/api/order/status", {orderId, status: e.target.value});
+    if(response.data.success) {
+      await fetchAllOrders();
+    }
+  }
+
   useEffect(() => {
     fetchAllOrders();
   }, []);
@@ -73,7 +80,12 @@ export const Orders = ({url}) => {
                 <td className='p-1'>{order.items.length}</td>
                 <td className='p-1'>{order.amount}</td>
                 <td className='p-1'>
-                  <select name= "" className='bg-primary ring-secondary text-sm max-w-20 xl:max-w-28'>
+                  <select 
+                    onChange={(e) => statusHander(e, order._id)}
+                    value = {order.status}
+                    name= "" 
+                    className='bg-primary ring-secondary text-sm max-w-20 xl:max-w-28'
+                  >
                     <option value="Product Loading">Product Loading</option>
                     <option value="Out for Delivery">Out for Delivery</option>
                     <option value="Delivered">Delivered</option>
