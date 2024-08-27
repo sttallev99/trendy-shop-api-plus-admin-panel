@@ -5,7 +5,7 @@ import  Stripe from "stripe";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const placeOrder = async(req, res) => {
-    const frontend_url = "https://trendy-shop-1vps.onrender.com"
+    const frontend_url = "https://trendy-shop-nmku.onrender.com"
     try {
         const newOrder = new orderModel({
             userId: req.body.userId,
